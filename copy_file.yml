@@ -1,0 +1,13 @@
+---
+-   name:   This is play for copying file from src to dest
+    hosts:  all
+    become: yes
+    tasks:  
+        -   name:   Copying file form src to dest
+        
+            copy:   
+                src:    /etc/ansible/abc
+                dest:   /tmp/abc
+                
+...
+

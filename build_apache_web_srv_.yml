@@ -1,0 +1,23 @@
+---
+-   name: This is play for configure apache_web_srv
+    hosts: all
+    become: yes
+    tasks:
+        -   name:   to install httpd pkg
+            yum:    
+                name: httpd
+                state:  present
+                
+        -   name:   to copy index.html file from src to dest    
+            copy:   
+                src:    /etc/ansible/files/index.html
+                dest:   /var/www/html/index.html
+                
+                
+        -   name:   to restart httpd service
+            service:    
+                name:   httpd
+                state:  restarted
+                enabled: yes
+               
+...

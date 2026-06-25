@@ -1,0 +1,19 @@
+---
+-   name:   This is playbook for installing pkg
+    hosts:  all
+    become: yes
+    vars:
+        -   pkg:    httpd
+           
+    tasks:  
+        -   name:   to install pkg
+            yum:
+                name:   "{{pkg}}"
+                state:  present
+                
+        -   name: to Start the service
+            service:
+                name:   "{{pkg}}"
+                state:  restarted
+                enabled: yes
+...

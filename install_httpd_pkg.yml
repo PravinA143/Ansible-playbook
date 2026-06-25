@@ -1,0 +1,11 @@
+---
+-   name:   This is playbook for installing httpd pkg
+    hosts:  all
+    become: yes
+    tasks:  
+        -   name:   to install httpd pkg
+            yum:
+                name:   httpd
+                state:  present
+                
+...
