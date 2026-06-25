@@ -1,0 +1,11 @@
+---
+-   name: this is play playbook for creating file with name test.txt
+    hosts:  all 
+    become: yes
+    tasks:  
+        -   name:   test.txt
+            file:
+                path:   /tmp/test.txt
+                state:  touch
+        
+...
